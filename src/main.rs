@@ -1,25 +1,18 @@
-use std::fs;
+mod day1;
+mod day2;
+mod day3;
+
+use day1::day_1;
+use day2::day_2;
+use day3::day_3;
 
 fn main() {
-    let calories = fs::read_to_string("calories").expect("File not readable");
-    
+    println!("Execute day 1");
+    day_1();
 
-    let mut calory_list:Vec<i32> = Vec::new();
-    let mut total = 0;
-    for line in calories.lines(){
-        if line.trim().is_empty(){
-            println!("Processing new elf");
-            calory_list.push(total);
-            total = 0;
-        } else {
-          let calory :i32  = line.trim().parse().unwrap();
-          total += calory;
-        }
-    }
+    println!("Execute day 2");
+    day_2();
 
-    println!("{:?}", calory_list);
-            
-
-
-    println!("Hello, world!");
+    println!("Execute day 3");
+    day_3();
 }
