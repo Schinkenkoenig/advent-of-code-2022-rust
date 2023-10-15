@@ -23,6 +23,29 @@ pub fn day_3() {
     }
 
     println!("Sum of priorities is: {0}", sum_prio);
+
+    let lines: Vec<&str> = rucksacks.lines().collect();
+
+    sum_prio = 0;
+    for x in lines.chunks(3){
+        let l1 = x[0];
+        let l2 = x[1];
+        let l3 = x[2];
+        let mut common: char = ' ';
+        for c in l1.chars(){
+            if l2.chars().any(|x| x == c) && l3.chars().any(|x| x == c){
+                common = c;
+                break;
+            }
+        }
+
+        let priority = get_priority(common);
+        sum_prio += priority;
+        println!("{0}", priority)
+    }
+
+
+    println!("Sum of priorities is: {0}", sum_prio);
 }
 
 fn get_common_character(s1: &str, s2: &str) -> char {
