@@ -2,7 +2,7 @@ use std::fs;
 
 pub fn day_2() {
     let round_strategies =
-        fs::read_to_string("/home/haki/dev/advent-of-code-2022-rust/src/rps_strategy")
+        fs::read_to_string("rps_strategy")
             .expect("File not readable");
 
     let mut total_points_1 = 0;

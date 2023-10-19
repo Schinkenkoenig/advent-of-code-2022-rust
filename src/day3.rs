@@ -1,7 +1,7 @@
 use std::fs;
 
 pub fn day_3() {
-    let rucksacks = fs::read_to_string("/home/haki/dev/advent-of-code-2022-rust/src/rucksack")
+    let rucksacks = fs::read_to_string("rucksack")
         .expect("File not readable");
 
     let mut sum_prio = 0;

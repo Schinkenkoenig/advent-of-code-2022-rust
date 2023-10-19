@@ -2,7 +2,7 @@ use std::fs;
 
 pub fn day_4() {
     let section_assignments =
-        fs::read_to_string("/home/haki/dev/advent-of-code-2022-rust/src/section_assignments")
+        fs::read_to_string("section_assignments")
             .expect("File not readable");
 
     let mut count_everything = 0;

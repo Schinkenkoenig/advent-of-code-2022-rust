@@ -2,7 +2,7 @@
 use std::fs;
 
 pub fn day_1() {
-    let calories = fs::read_to_string("/home/haki/dev/advent-of-code-2022-rust/src/calories")
+    let calories = fs::read_to_string("calories")
         .expect("File not readable");
     
     let mut calory_list: Vec<i32> = Vec::new();
