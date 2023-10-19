@@ -9,15 +9,33 @@ use day3::day_3;
 use day4::day_4;
 
 fn main() {
-    println!("Execute day 1");
-    day_1();
+    let args: Vec<_> = std::env::args().collect();
 
-    println!("Execute day 2");
-    day_2();
+    let [_exe, day] = args.as_slice() else {
+        panic!("Please provide at least one parameter");
+    };
 
-    println!("Execute day 3");
-    day_3();
-    
-    println!("Execute day 4");
-    day_4();
+    let day: u32 = day.parse().unwrap();
+
+    match day {
+        1 => {
+            println!("Execute day 1");
+            day_1();
+        }
+        2 => {
+            println!("Execute day 2");
+            day_2();
+        },
+        3 => {
+            println!("Execute day 3");
+            day_3();
+        }
+        4 => {
+            println!("Execute day 4");
+            day_4();
+        },
+        _ => {
+            todo!("Day {0} not implemented", day);
+        }
+    }
 }

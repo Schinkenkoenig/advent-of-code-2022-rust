@@ -8,7 +8,7 @@ pub fn day_2() {
     let mut total_points_1 = 0;
     let mut total_points_2 = 0;
     for round in round_strategies.lines() {
-        let choices: Vec<&str> = round.split(" ").collect();
+        let choices: Vec<_> = round.split(" ").collect();
 
         if choices.len() != 2 {
             continue;
